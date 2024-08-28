@@ -1,12 +1,9 @@
 import functools
-from PIL import Image
 
-from event_service_utils.logging.decorators import timer_logger
 from event_service_utils.services.event_driven import BaseEventDrivenCMDService
 from event_service_utils.tracing.jaeger import init_tracer
 
 from image_resizer_service.conf import RESIZE_SCALE
-from image_resizer_service.cloudseg import load_model as load_cloud_seg
 from image_resizer_service.resize_model import Resizer
 
 
