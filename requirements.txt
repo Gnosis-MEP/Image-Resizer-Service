@@ -1,0 +1,5 @@
+opencv-python-headless==4.8.1.78
+event-service-utils
+python-decouple==3.1
+walrus==0.7.1
+-e file:./#egg=image_resizer_service
