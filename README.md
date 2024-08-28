@@ -1,6 +1,5 @@
 # Image Resizer Service
 This is a general image resizer service. Uses a default resizing method or cloudseg as alternative.
-
 Implementation of the CloudSeg component for re-creating a HD image from a lowres one.
 
 **ps**: Using Cloudseg as a service in the CE domain, just to simplify its use on the framework.
