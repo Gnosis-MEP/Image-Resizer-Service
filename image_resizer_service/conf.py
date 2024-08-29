@@ -24,7 +24,7 @@ RESIZE_METHOD = config('RESIZE_METHOD', 'cloudseg')
 
 default_carn_model_weights_path = os.path.join(PROJECT_ROOT, 'checkpoint', 'carn.pth')
 CARN_MODEL_WEIGHTS_PATH = config('CARN_MODEL_WEIGHTS_PATH', default=default_carn_model_weights_path)
-RESIZE_SCALE = config('RESIZE_SCALE', default=4)
+RESIZE_SCALE = config('RESIZE_SCALE', default=4, cast=int)
 
 
 # LISTEN_EVENT_TYPE_SOME_EVENT_TYPE = config('LISTEN_EVENT_TYPE_SOME_EVENT_TYPE')
