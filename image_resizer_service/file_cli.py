@@ -5,6 +5,8 @@ class ReplaceKeyRedisImageCache(RedisImageCache):
     def replace_inmemory_storage(self, img_key,  img_numpy_array):
         nd_array_bytes = img_numpy_array.tobytes(order='C')
         ret = self.client.set(img_key, nd_array_bytes)
-        if not ret:
+        if ret:
+            self.client.expire(img_key, self.expiration_time)
+        else:
             raise Exception('Couldnt replace image in redis')
         return img_key

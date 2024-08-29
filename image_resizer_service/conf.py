@@ -14,6 +14,7 @@ EXAMPLE_IMAGE_SRS_CV2 = os.path.join(EXAMPLE_IMAGES_PATH, 'srs', 'cv2_frame_1.pn
 
 REDIS_ADDRESS = config('REDIS_ADDRESS', default='localhost')
 REDIS_PORT = config('REDIS_PORT', default='6379')
+REDIS_EXPIRATION_TIME = config('REDIS_EXPIRATION_TIME', default=4, cast=int)
 
 TRACER_REPORTING_HOST = config('TRACER_REPORTING_HOST', default='localhost')
 TRACER_REPORTING_PORT = config('TRACER_REPORTING_PORT', default='6831')

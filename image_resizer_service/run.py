@@ -7,6 +7,7 @@ from image_resizer_service.service import ImageResizerService
 from image_resizer_service.conf import (
     REDIS_ADDRESS,
     REDIS_PORT,
+    REDIS_EXPIRATION_TIME,
     PUB_EVENT_LIST,
     SERVICE_STREAM_KEY,
     SERVICE_CMD_KEY_LIST,
@@ -32,6 +33,7 @@ def run_service():
     file_storage_cli = ReplaceKeyRedisImageCache()
     file_storage_cli.file_storage_cli_config = redis_fs_cli_config
     file_storage_cli.initialize_file_storage_client()
+    file_storage_cli.expiration_time = REDIS_EXPIRATION_TIME
 
     stream_factory = RedisStreamFactory(host=REDIS_ADDRESS, port=REDIS_PORT)
     service = ImageResizerService(
